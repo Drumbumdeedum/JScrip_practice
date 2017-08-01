@@ -13,3 +13,9 @@ setInterval(function () {
 h1.addEventListener("click", function(){
   alert("h1 was clicked!");
 })
+
+var p = document.querySelector("p");
+
+p.addEventListener("click", function(){
+  alert("paragraph clicked")
+})
