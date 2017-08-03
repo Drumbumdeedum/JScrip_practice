@@ -2,9 +2,12 @@ var allLIs = document.querySelectorAll("li");
 
 for (var i = 0; i < allLIs.length; i++) {
   allLIs[i].addEventListener("mouseover", function(){
-    this.style.color = "green";
+    this.classList.add("selected");
   });
   allLIs[i].addEventListener("mouseout", function(){
-    this.style.color = "black";
+    this.classList.remove("selected");
+  });
+  allLIs[i].addEventListener("click", function(){
+    this.classList.toggle("done");
   });
 };
