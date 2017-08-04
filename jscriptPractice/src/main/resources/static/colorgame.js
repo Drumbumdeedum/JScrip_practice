@@ -10,6 +10,7 @@ var easyButton = document.querySelector("#easyButton");
 var hardButton = document.querySelector("#hardButton");
 
 colorDisplay.textContent = pickedColor;
+messageDisplay.textContent = "Guess the color!";
 
 for (var i = 0; i < squares.length; i++) {
   squares[i].style.backgroundColor = colors[i];
@@ -62,6 +63,8 @@ resetButton.addEventListener("click", function(){
   }
   h1.style.backgroundColor = "steelblue";
   resetButton.textContent = "New Colors";
+  messageDisplay.textContent = "Guess the Color!"
+
 });
 
 easyButton.addEventListener("click", function(){
@@ -78,6 +81,7 @@ easyButton.addEventListener("click", function(){
       squares[i].style.display = "none";
     }
   }
+  messageDisplay.textContent = "Guess the Color!"
 });
 
 hardButton.addEventListener("click", function(){
@@ -91,4 +95,5 @@ hardButton.addEventListener("click", function(){
     squares[i].style.backgroundColor = colors[i];
     squares[i].style.display = "block";
   }
+  messageDisplay.textContent = "Guess the Color!"
 });
