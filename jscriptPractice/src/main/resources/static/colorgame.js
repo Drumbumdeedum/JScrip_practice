@@ -1,14 +1,6 @@
-var colors = [
-  "rgb(255, 0, 0)",
-  "rgb(255, 255, 0)",
-  "rgb(0, 255, 0)",
-  "rgb(0, 255, 255)",
-  "rgb(0, 0, 255)",
-  "rgb(255, 0, 255)"
-];
-
+var colors = generateRandomColors(6);
 var squares = document.querySelectorAll(".square");
-var pickedColor = pickColor();
+var pickedColor = pickRandomColor();
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 
@@ -28,13 +20,28 @@ for (var i = 0; i < squares.length; i++) {
   });
 }
 
-function changeColors(color) {
-  for(var i = 0; i < squares.length; i++) {
+function changeColors(color){
+  for(var i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = color;
   }
 }
 
-function pickColor() {
+function pickRandomColor(){
   var randomNumber = Math.floor(Math.random() * colors.length);
   return colors[randomNumber];
+}
+
+function generateRandomColors(number){
+  var arr = [];
+  for(var i = 0; i < number; i++) {
+    arr.push(randomColor());
+  }
+  return arr;
+}
+
+function randomColor() {
+  var red = Math.floor(Math.random()* 256);
+  var blue = Math.floor(Math.random()* 256);
+  var green = Math.floor(Math.random()* 256);
+  return "rgb(" + red + ", " + green + ", " + blue + ")";
 }
