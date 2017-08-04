@@ -2,6 +2,7 @@ body {
   background-color: #232323;
   margin: 0;
   font-family: Monserrat, Avenir, serif;
+  text-transform: uppercase;
 }
 
 .square {
@@ -74,3 +75,8 @@ button:hover {
   font-weight: 700;
   color: steelblue;
 }
+
+button:focus {
+  outline:0;
+}
+

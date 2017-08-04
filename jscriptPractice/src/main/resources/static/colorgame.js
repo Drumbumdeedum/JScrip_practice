@@ -8,6 +8,7 @@ var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var easyButton = document.querySelector("#easyButton");
 var hardButton = document.querySelector("#hardButton");
+var stripe = document.querySelector("#stripe");
 
 colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = "Guess the color!";
