@@ -62,6 +62,7 @@ button {
   --webkit-transition: all .6s;
   --moz-transition: all .6s;
   user-focus: none;
+  outline: none;
 }
 
 button:hover {
