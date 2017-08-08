@@ -20,8 +20,10 @@ $(".onKeypress").on("keypress", function(){
 
 $("button").on("mouseenter", function(){
   $(this).css("color", "purple");
+  $(this).css("font-weight", "bold");
 });
 
 $("button").on("mouseleave", function(){
   $(this).css("color", "black");
+  $(this).css("font-weight", "normal");
 });
