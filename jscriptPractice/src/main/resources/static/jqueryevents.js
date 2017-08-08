@@ -17,3 +17,11 @@ $("h1").on("click", function(){
 $(".onKeypress").on("keypress", function(){
   alert("Key pressed!");
 });
+
+$("button").on("mouseenter", function(){
+  $(this).css("color", "purple");
+});
+
+$("button").on("mouseleave", function(){
+  $(this).css("color", "black");
+});
