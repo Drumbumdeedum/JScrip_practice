@@ -9,3 +9,11 @@ $("input").keypress(function(event){
     alert("YOU HIT ENTER!");
   }
 });
+
+$("h1").on("click", function(){
+  $(this).css("color", "purple");
+});
+
+$(".onKeypress").on("keypress", function(){
+  alert("Key pressed!");
+});
