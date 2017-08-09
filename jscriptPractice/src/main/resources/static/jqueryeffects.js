@@ -6,6 +6,18 @@ $('.fadeOut').on("click", function(){
 
 $('.fadeIn').on("click", function(){
   $('div').fadeIn(1000, function(){
-    console.log("Faded out!");
+    console.log("Faded in!");
+  });
+});
+
+$('.slideUp').on("click", function(){
+  $('div').slideUp(1000, function(){
+    console.log("Slided up!");
+  });
+});
+
+$('.slideDown').on("click", function(){
+  $('div').slideDown(1000, function(){
+    console.log("Slided down!");
   });
 });
