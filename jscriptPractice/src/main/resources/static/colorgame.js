@@ -21,7 +21,7 @@ for(var i = 0; i < squares.length; i++){
   }
 }
 
-for (var i = 0; i < squares.length; i++) {
+for (var i = 0; i < squares.length; i++){
   squares[i].style.backgroundColor = colors[i];
   squares[i].addEventListener("click", function(){
     var clickedColor = this.style.backgroundColor;
@@ -50,13 +50,16 @@ function pickRandomColor(){
 
 function generateRandomColors(number){
   var arr = [];
-  for(var i = 0; i < number; i++) {
-    arr.push(randomColor());
+  while (arr.length < number) {
+    var color = randomColor();
+    if(!arr.indexOf(color) > -1){
+      arr.push(color);
+    }
   }
   return arr;
 }
 
-function randomColor() {
+function randomColor(){
   var red = Math.floor(Math.random()* 256);
   var blue = Math.floor(Math.random()* 256);
   var green = Math.floor(Math.random()* 256);
