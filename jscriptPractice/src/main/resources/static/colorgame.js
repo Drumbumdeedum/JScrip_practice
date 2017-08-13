@@ -1,4 +1,4 @@
-var numberOfSquares = 6;
+var numberOfSquares = 8;
 var colors = generateRandomColors(numberOfSquares);
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickRandomColor();
@@ -7,10 +7,19 @@ var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var easyButton = document.querySelector("#easyButton");
+var mediumButton = document.querySelector("#mediumButton");
 var hardButton = document.querySelector("#hardButton");
 
 colorDisplay.textContent = pickedColor;
 messageDisplay.textContent = "Guess the color!";
+
+for(var i = 0; i < squares.length; i++){
+  if(colors[i]){
+    squares[i].style.backgroundColor = colors[i];
+  } else {
+    squares[i].style.display = "none";
+  }
+}
 
 for (var i = 0; i < squares.length; i++) {
   squares[i].style.backgroundColor = colors[i];
@@ -68,8 +77,9 @@ resetButton.addEventListener("click", function(){
 });
 
 easyButton.addEventListener("click", function(){
-  numberOfSquares = 3;
+  numberOfSquares = 4;
   easyButton.classList.add("selected");
+  mediumButton.classList.remove("selected");
   hardButton.classList.remove("selected");
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
@@ -84,16 +94,37 @@ easyButton.addEventListener("click", function(){
   messageDisplay.textContent = "Guess the Color!"
 });
 
-hardButton.addEventListener("click", function(){
-  numberOfSquares = 6;
-  hardButton.classList.add("selected");
+mediumButton.addEventListener("click", function(){
+  numberOfSquares = 8;
+  debugger;
   easyButton.classList.remove("selected");
+  mediumButton.classList.add("selected");
+  hardButton.classList.remove("selected");
+  colors = generateRandomColors(numberOfSquares);
+  pickedColor = pickRandomColor();
+  colorDisplay.textContent = pickedColor;
+  for(var i = 0; i < squares.length; i++){
+    if(colors[i]){
+      squares[i].style.backgroundColor = colors[i];
+      squares[i].style.display = "inline-block";
+    } else {
+      squares[i].style.display = "none";
+    }
+  }
+  messageDisplay.textContent = "Guess the Color!"
+});
+
+hardButton.addEventListener("click", function(){
+  numberOfSquares = 12;
+  easyButton.classList.remove("selected");
+  mediumButton.classList.remove("selected");
+  hardButton.classList.add("selected");
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
   colorDisplay.textContent = pickedColor;
   for(var i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
-    squares[i].style.display = "block";
+    squares[i].style.display = "inline-block";
   }
   messageDisplay.textContent = "Guess the Color!"
 });
