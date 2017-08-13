@@ -39,9 +39,9 @@ body {
 }
 
 .square {
-  width: 30%;
+  width: 20%;
+  padding-bottom: 20%;
   background: purple;
-  padding-bottom: 30%;
   float: left;
   margin: 1.66%;
   border-radius: 20%;
@@ -52,6 +52,7 @@ body {
 
 #container {
   max-width: 600px;
+  max-height: 600px;
   margin: 20px auto;
 }
 
