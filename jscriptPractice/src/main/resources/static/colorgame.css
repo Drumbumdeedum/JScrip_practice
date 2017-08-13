@@ -5,6 +5,39 @@ body {
   text-transform: uppercase;
 }
 
+#sampleContainer {
+  padding: 0px;
+  margin: 15px 0;
+}
+
+#redSquare, #greenSquare, #blueSquare {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  display: inline-block;
+  line-height: 100px;
+  box-shadow: 4px 4px 4px #3C598E;
+  font-size: 50px;
+  font-weight: bold;
+  color: grey;
+  text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+}
+
+#redSquare {
+  background-color: red;
+  color: pink;
+}
+
+#greenSquare {
+  background-color: green;
+  color: lawngreen;
+}
+
+#blueSquare {
+  background-color: blue;
+  color: lightskyblue;
+}
+
 .square {
   width: 30%;
   background: purple;
