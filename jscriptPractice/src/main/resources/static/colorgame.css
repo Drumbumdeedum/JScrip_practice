@@ -7,15 +7,15 @@ body {
 
 #sampleContainer {
   padding: 0px;
-  margin: 15px 0;
+  margin: 0px;
 }
 
 #redSquare, #greenSquare, #blueSquare {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 20%;
   display: inline-block;
-  line-height: 100px;
+  line-height: 80px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
   font-size: 50px;
   font-weight: bold;
@@ -38,18 +38,6 @@ body {
   background-color: blue;
 }
 
-.square {
-  width: 20%;
-  padding-bottom: 20%;
-  background: purple;
-  float: left;
-  margin: 1.66%;
-  border-radius: 20%;
-  transition: background .6s;
-  --webkit-transition: backround .6s;
-  --moz-transition: backround .6s;
-}
-
 #container {
   max-width: 600px;
   max-height: 600px;
@@ -63,7 +51,7 @@ h1 {
   font-weight: normal;
   text-transform: uppercase;
   line-height: 1.1;
-  padding: 20px 0;
+  padding: 5px 0;
   margin: 0;
 }
 
@@ -80,7 +68,33 @@ h1 {
 }
 
 #colorDisplay {
-  font-size: 200%;
+  font-size: 140%;
+}
+
+.square {
+  border-radius: 20%;
+  display: inline-block;
+  transition: background .6s;
+  --webkit-transition: backround .6s;
+  --moz-transition: backround .6s;
+}
+
+.easyMode {
+  width: 45%;
+  padding-bottom: 45%;
+  margin: .66%;
+}
+
+.mediumMode {
+  width: 30%;
+  padding-bottom: 30%;
+  margin: .33%;
+}
+
+.hardMode {
+  width: 22.5%;
+  padding-bottom: 22.5%;
+  margin: .11%;
 }
 
 button {
