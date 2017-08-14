@@ -16,26 +16,26 @@ body {
   border-radius: 20%;
   display: inline-block;
   line-height: 100px;
-  box-shadow: 4px 4px 4px #3C598E;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, .5);
   font-size: 50px;
   font-weight: bold;
-  color: grey;
-  text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+  color: white;
+  text-shadow: -1px 0 rgba(0, 0, 0, .5),
+                0 1px rgba(0, 0, 0, .5),
+                1px 0 rgba(0, 0, 0, .5),
+               0 -1px rgba(0, 0, 0, .5);
 }
 
 #redSquare {
   background-color: red;
-  color: pink;
 }
 
 #greenSquare {
   background-color: green;
-  color: lawngreen;
 }
 
 #blueSquare {
   background-color: blue;
-  color: lightskyblue;
 }
 
 .square {
