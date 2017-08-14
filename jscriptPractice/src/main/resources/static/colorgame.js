@@ -1,4 +1,4 @@
-var numberOfSquares = 8;
+var numberOfSquares = 9;
 var colors = generateRandomColors(numberOfSquares);
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickRandomColor();
@@ -84,6 +84,11 @@ easyButton.addEventListener("click", function(){
   easyButton.classList.add("selected");
   mediumButton.classList.remove("selected");
   hardButton.classList.remove("selected");
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].classList.add("easyMode");
+    squares[i].classList.remove("mediumMode");
+    squares[i].classList.remove("hardMode");
+  }
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
   colorDisplay.textContent = pickedColor;
@@ -98,11 +103,15 @@ easyButton.addEventListener("click", function(){
 });
 
 mediumButton.addEventListener("click", function(){
-  numberOfSquares = 8;
-  debugger;
+  numberOfSquares = 9;
   easyButton.classList.remove("selected");
   mediumButton.classList.add("selected");
   hardButton.classList.remove("selected");
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].classList.remove("easyMode");
+    squares[i].classList.add("mediumMode");
+    squares[i].classList.remove("hardMode");
+  }
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
   colorDisplay.textContent = pickedColor;
@@ -118,14 +127,19 @@ mediumButton.addEventListener("click", function(){
 });
 
 hardButton.addEventListener("click", function(){
-  numberOfSquares = 12;
+  numberOfSquares = 16;
   easyButton.classList.remove("selected");
   mediumButton.classList.remove("selected");
   hardButton.classList.add("selected");
+  for (var i = 0; i < numberOfSquares; i++) {
+    squares[i].classList.remove("easyMode");
+    squares[i].classList.remove("mediumMode");
+    squares[i].classList.add("hardMode");
+  }
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
   colorDisplay.textContent = pickedColor;
-  for(var i = 0; i < squares.length; i++){
+  for(var i = 0; i < numberOfSquares; i++){
     squares[i].style.backgroundColor = colors[i];
     squares[i].style.display = "inline-block";
   }
