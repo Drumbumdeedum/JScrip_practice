@@ -10,7 +10,7 @@ var easyButton = document.querySelector("#easyButton");
 var mediumButton = document.querySelector("#mediumButton");
 var hardButton = document.querySelector("#hardButton");
 
-colorDisplay.textContent = pickedColor;
+colorDisplay.textContent = pickedColor.substr(3);
 messageDisplay.textContent = "Guess the color!";
 
 for(var i = 0; i < squares.length; i++){
@@ -69,7 +69,7 @@ function randomColor(){
 resetButton.addEventListener("click", function(){
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
-  colorDisplay.textContent = pickedColor;
+  colorDisplay.textContent = pickedColor.substr(3);
   for (var i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
   }
@@ -91,7 +91,7 @@ easyButton.addEventListener("click", function(){
   }
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
-  colorDisplay.textContent = pickedColor;
+  colorDisplay.textContent = pickedColor.substr(3);
   for(var i = 0; i < squares.length; i++){
     if(colors[i]){
       squares[i].style.backgroundColor = colors[i];
@@ -114,7 +114,7 @@ mediumButton.addEventListener("click", function(){
   }
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
-  colorDisplay.textContent = pickedColor;
+  colorDisplay.textContent = pickedColor.substr(3);
   for(var i = 0; i < squares.length; i++){
     if(colors[i]){
       squares[i].style.backgroundColor = colors[i];
@@ -138,7 +138,7 @@ hardButton.addEventListener("click", function(){
   }
   colors = generateRandomColors(numberOfSquares);
   pickedColor = pickRandomColor();
-  colorDisplay.textContent = pickedColor;
+  colorDisplay.textContent = pickedColor.substr(3);
   for(var i = 0; i < numberOfSquares; i++){
     squares[i].style.backgroundColor = colors[i];
     squares[i].style.display = "inline-block";
