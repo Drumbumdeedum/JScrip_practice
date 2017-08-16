@@ -3,14 +3,27 @@
 
   <head>
     <meta charset="UTF-8">
+    <title>Script Demo</title>
     <link rel="stylesheet" type="text/css" href="../static/circles.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/circles.js"></script>
     <script type="text/javascript" src="../assets/paper-full.js"></script>
-    <title>Script Demo</title>
+    <script type="text/paperscript" canvas="myCanvas">
+    // Create a Paper.js Path to draw a line into it:
+    var path = new Path();
+    // Give the stroke a color
+    path.strokeColor = 'black';
+    var start = new Point(100, 100);
+    // Move to start and draw a line from there
+    path.moveTo(start);
+    // Note the plus operator on Point objects.
+    // PaperScript does that for us, and much more!
+    path.lineTo(start + [ 100, -50 ]);
+    </script>
+
   </head>
 
   <body>
-
-    <script src="../static/circles.js"></script>
+    <canvas id="myCanvas" resize></canvas>
   </body>
 </html>
