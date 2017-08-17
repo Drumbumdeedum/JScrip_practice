@@ -9,16 +9,17 @@
     <script type="text/javascript" src="../static/circles.js"></script>
     <script type="text/javascript" src="../assets/paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-    // Create a Paper.js Path to draw a line into it:
     var path = new Path();
-    // Give the stroke a color
-    path.strokeColor = 'black';
-    var start = new Point(100, 100);
-    // Move to start and draw a line from there
+    path.strokeColor = 'red';
+    var start = new Point(0, 0);
     path.moveTo(start);
-    // Note the plus operator on Point objects.
-    // PaperScript does that for us, and much more!
-    path.lineTo(start + [ 100, -50 ]);
+    path.lineTo(start + [ 100, 100 ]);
+
+    var myCircle = new Path.Circle(new Point(110, 110), 50);
+    myCircle.fillColor = 'black';
+
+    var myCircle2 = new Path.Circle(new Point(50, 50), 300);
+    myCircle2.fillColor = 'purple';
     </script>
 
   </head>
