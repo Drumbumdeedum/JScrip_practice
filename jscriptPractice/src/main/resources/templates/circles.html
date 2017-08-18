@@ -13,11 +13,112 @@
     
     var circles = [];
 
-    var sound = new Howl({
+    var sound01 = new Howl({
+        src:['../assets/sounds/bubbles.mp3']
+    });
+
+    var sound02 = new Howl({
+        src:['../assets/sounds/clay.mp3']
+    });
+
+    var sound03 = new Howl({
+        src:['../assets/sounds/confetti.mp3']
+    });
+
+    var sound04 = new Howl({
+        src:['../assets/sounds/corona.mp3']
+    });
+
+    var sound05 = new Howl({
+        src:['../assets/sounds/dotted-spiral.mp3']
+    });
+
+    var sound06 = new Howl({
+        src:['../assets/sounds/flash-1.mp3']
+    });
+
+    var sound07 = new Howl({
+        src:['../assets/sounds/flash-2.mp3']
+    });
+
+    var sound08 = new Howl({
+        src:['../assets/sounds/flash-3.mp3']
+    });
+
+    var sound09 = new Howl({
+        src:['../assets/sounds/strike.mp3']
+    });
+
+    var sound10 = new Howl({
+        src:['../assets/sounds/glimmer.mp3']
+    });
+
+    var sound11 = new Howl({
+        src:['../assets/sounds/moon.mp3']
+    });
+
+    var sound12 = new Howl({
+        src:['../assets/sounds/pinwheel.mp3']
+    });
+
+    var sound13 = new Howl({
+        src:['../assets/sounds/piston-1.mp3']
+    });
+
+    var sound14 = new Howl({
+        src:['../assets/sounds/piston-2.mp3']
+    });
+
+    var sound15 = new Howl({
+        src:['../assets/sounds/piston-3.mp3']
+    });
+
+    var sound16 = new Howl({
+        src:['../assets/sounds/prism-1.mp3']
+    });
+
+    var sound17 = new Howl({
+        src:['../assets/sounds/prism-2.mp3']
+    });
+
+    var sound18 = new Howl({
+        src:['../assets/sounds/prism-3.mp3']
+    });
+
+    var sound19 = new Howl({
+        src:['../assets/sounds/splits.mp3']
+    });
+
+    var sound20 = new Howl({
+        src:['../assets/sounds/suspension.mp3']
+    });
+
+    var sound21 = new Howl({
+        src:['../assets/sounds/timer.mp3']
+    });
+
+    var sound22 = new Howl({
         src:['../assets/sounds/ufo.mp3']
     });
 
+    var sound23 = new Howl({
+        src:['../assets/sounds/veil.mp3']
+    });
+
+    var sound24 = new Howl({
+        src:['../assets/sounds/wipe.mp3']
+    });
+
+    var sound25 = new Howl({
+        src:['../assets/sounds/zig-zag.mp3']
+    });
+
+    var sound26 = new Howl({
+        src:['../assets/sounds/squiggle.mp3']
+    });
+
     function onKeyDown(event){
+        
         var red = Math.floor(Math.random()* 256);
         var green = Math.floor(Math.random()* 256);
         var blue = Math.floor(Math.random()* 256);
@@ -29,7 +130,109 @@
         circle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
         circles.push(circle);
 
-        sound.play();
+        if(event.key === "q") {
+            sound01.play();
+        }
+
+        if(event.key === "w") {
+            sound02.play();
+        }
+
+        if(event.key === "e") {
+            sound03.play();
+        }
+
+        if(event.key === "r") {
+            sound04.play();
+        }
+
+        if(event.key === "t") {
+            sound05.play();
+        }
+
+        if(event.key === "z") {
+            sound06.play();
+        }
+
+        if(event.key === "u") {
+            sound07.play();
+        }
+
+        if(event.key === "i") {
+            sound08.play();
+        }
+
+        if(event.key === "o") {
+            sound09.play();
+        }
+
+        if(event.key === "p") {
+            sound10.play();
+        }
+
+        if(event.key === "a") {
+            sound11.play();
+        }
+
+        if(event.key === "s") {
+            sound12.play();
+        }
+
+        if(event.key === "d") {
+            sound13.play();
+        }
+
+        if(event.key === "f") {
+            sound14.play();
+        }
+
+        if(event.key === "g") {
+            sound15.play();
+        }
+
+        if(event.key === "h") {
+            sound16.play();
+        }
+
+        if(event.key === "j") {
+            sound17.play();
+        }
+
+        if(event.key === "k") {
+            sound18.play();
+        }
+
+        if(event.key === "l") {
+            sound19.play();
+        }
+
+        if(event.key === "y") {
+            sound20.play();
+        }
+
+        if(event.key === "x") {
+            sound21.play();
+        }
+
+        if(event.key === "c") {
+            sound22.play();
+        }
+
+        if(event.key === "v") {
+            sound23.play();
+        }
+
+        if(event.key === "b") {
+            sound24.play();
+        }
+
+        if(event.key === "n") {
+            sound25.play();
+        }
+
+        if(event.key === "m") {
+            sound26.play();
+        }
     }
 
     function onFrame(event){
