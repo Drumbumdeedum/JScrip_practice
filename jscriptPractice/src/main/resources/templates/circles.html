@@ -8,9 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../static/circles.js"></script>
     <script type="text/javascript" src="../assets/paper-full.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
     
     var circles = [];
+
+    var sound = new Howl({
+        src:['../assets/sounds/ufo.mp3']
+    });
 
     function onKeyDown(event){
         var red = Math.floor(Math.random()* 256);
@@ -23,12 +28,14 @@
         var circle = new Path.Circle(new Point(point , point), 500);
         circle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
         circles.push(circle);
+
+        sound.play();
     }
 
     function onFrame(event){
         for(var i = 0; i < circles.length; i++) {
             circles[i].fillColor.hue += 1;
-            circles[i].scale(.95);
+            circles[i].scale(.93);
         }
     }
 
