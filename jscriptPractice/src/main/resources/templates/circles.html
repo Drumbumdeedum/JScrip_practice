@@ -117,7 +117,7 @@
     });
 
     function onKeyDown(event){
-        
+
         var red = Math.floor(Math.random() * 256);
         var green = Math.floor(Math.random() * 256);
         var blue = Math.floor(Math.random() * 256);
@@ -125,7 +125,7 @@
         var max = new Point(view.size.width, view.size.height);
         var randomPoint = Point.random();
         var point = max * randomPoint;
-        
+
         var random = Math.floor(Math.random() * 4);
         console.log(random);
 
@@ -133,23 +133,23 @@
             var triangle = new Path.RegularPolygon(new Point(point, point), 3, 500);
             triangle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
             shapes.push(triangle);
-        } 
+        }
         if (random === 1) {
             var circle = new Path.Circle(new Point(point , point), 500);
             circle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
             shapes.push(circle);
-        } 
+        }
         if (random === 2) {
             var decagon = new Path.RegularPolygon(new Point(point, point), 10, 500);
             decagon.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
             shapes.push(decagon);
-        } 
+        }
         if (random === 3) {
             var rectangle = new Path.RegularPolygon(new Point(point, point), 4, 500);
             rectangle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
             shapes.push(rectangle);
         }
- 
+
         if(event.key === "q") {
             sound01.play();
         }
