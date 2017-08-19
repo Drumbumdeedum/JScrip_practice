@@ -6,12 +6,11 @@
     <title>Script Demo</title>
     <link rel="stylesheet" type="text/css" href="../static/circles.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../static/circles.js"></script>
     <script type="text/javascript" src="../assets/paper-full.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
-    
-    var circles = [];
+
+    var shapes = [];
 
     var sound01 = new Howl({
         src:['../assets/sounds/bubbles.mp3'],
@@ -119,17 +118,38 @@
 
     function onKeyDown(event){
         
-        var red = Math.floor(Math.random()* 256);
-        var green = Math.floor(Math.random()* 256);
-        var blue = Math.floor(Math.random()* 256);
+        var red = Math.floor(Math.random() * 256);
+        var green = Math.floor(Math.random() * 256);
+        var blue = Math.floor(Math.random() * 256);
 
         var max = new Point(view.size.width, view.size.height);
         var randomPoint = Point.random();
         var point = max * randomPoint;
-        var circle = new Path.Circle(new Point(point , point), 500);
-        circle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
-        circles.push(circle);
+        
+        var random = Math.floor(Math.random() * 4);
+        console.log(random);
 
+        if (random === 0) {
+            var triangle = new Path.RegularPolygon(new Point(point, point), 3, 500);
+            triangle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
+            shapes.push(triangle);
+        } 
+        if (random === 1) {
+            var circle = new Path.Circle(new Point(point , point), 500);
+            circle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
+            shapes.push(circle);
+        } 
+        if (random === 2) {
+            var decagon = new Path.RegularPolygon(new Point(point, point), 10, 500);
+            decagon.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
+            shapes.push(decagon);
+        } 
+        if (random === 3) {
+            var rectangle = new Path.RegularPolygon(new Point(point, point), 4, 500);
+            rectangle.fillColor = 'rgb(' + red + ', ' + green + ', '+ blue + ')';
+            shapes.push(rectangle);
+        }
+ 
         if(event.key === "q") {
             sound01.play();
         }
@@ -236,12 +256,12 @@
     }
 
     function onFrame(event){
-        for(var i = 0; i < circles.length; i++) {
-            circles[i].fillColor.hue += 1;
-            circles[i].scale(.91);
-            if(circles[i].area < 1){
-                circles[i].remove();
-                circles.splice(i, 1);
+        for(var i = 0; i < shapes.length; i++) {
+            shapes[i].fillColor.hue += 1;
+            shapes[i].scale(.95);
+            if(shapes[i].area < 1){
+                shapes[i].remove();
+                shapes.splice(i, 1);
                 i--;
             }
         }
