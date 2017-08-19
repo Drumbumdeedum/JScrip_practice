@@ -5,6 +5,8 @@ body, html {
 
 canvas {
 	width: 100%;
-    height: 100%;
-	background: #191970;
+  height: 100%;
+	background: #2b5876;
+  background: -webkit-linear-gradient(to right, #2b5876, #4e4376);
+  background: linear-gradient(to right, #2b5876, #4e4376);
 }
